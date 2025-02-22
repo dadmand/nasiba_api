@@ -1,8 +1,13 @@
 from fastapi import FastAPI
 from app.api import third_party
 from fastapi.middleware.cors import CORSMiddleware
+from app.core.database import Base, engine
 
 app = FastAPI(title="Third Party API")
+
+# Create tables at startup
+Base.metadata.create_all(bind=engine)
+
 
 # Add CORS middleware
 app.add_middleware(

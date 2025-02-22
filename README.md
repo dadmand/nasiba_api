@@ -5,3 +5,7 @@ pip install -r requirements.txt
 pytest tests/
 
 -- RUN
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8888
+
+-- Docker compose
+docker compose up --build

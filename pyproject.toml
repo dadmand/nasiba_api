@@ -1,0 +1,35 @@
+[tool.poetry]
+name = "nasaiba-api"
+version = "0.1.0"
+description = "Third Party API Service"
+authors = ["Nasiba <devnasiba.ir>"]
+
+[tool.poetry.dependencies]
+python = "^3.13"
+fastapi = "^0.109.0"
+uvicorn = "^0.27.0"
+sqlalchemy = "^2.0.25"
+pydantic = "^2.5.3"
+pydantic-settings = "^2.1.0"
+psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+httpx = "^0.26.0"
+black = "^24.1.0"
+isort = "^5.13.2"
+flake8 = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3 
